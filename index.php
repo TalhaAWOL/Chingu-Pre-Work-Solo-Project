@@ -31,13 +31,14 @@
 		<!-- Bootstrap JS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<!-- Font Awesome Icons -->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
 		<style>
 		
 			body{
 				font-family: 'Inconsolata', monospace;
-				background-color:#3B3C4C;
+				background-color:#30303D;
+				letter-spacing: -0.5px;
 			}
 
 			.wrapper {
@@ -52,9 +53,15 @@
 				left: 0;
 				height: 100%;
 				z-index: 1;
-				background-color: #5D5F74;
-				padding-left:12px;
+				background-color:#434355;
+				padding-left:10px;
 				padding-top:15px;
+			}
+
+			#content{
+				padding-left:160px;
+				width:97%;
+				height:100%;
 			}
 			
 			.navigationButton{
@@ -70,8 +77,60 @@
 				font-size:20px; !important
 			}
 
-			#navBottom a {
+			#navBottom a:hover{
 				text-decoration:none;
+			}
+
+			.fa {
+				padding:4px 0px;
+				font-size: 15px;
+				width: 22px;
+				text-align: center;
+				text-decoration: none;
+				border-radius: 50%;
+			}
+
+			.fa-twitter {
+				background: #55ACEE;
+				color: white;
+			}
+
+			.fa-google {
+				background: #dd4b39;
+				color: white;
+			}
+
+			.fa-linkedin {
+				background: #007bb5;
+				color: white;
+			}
+
+			.fa-facebook {
+				background: #3B5998;
+				color: white;
+			}
+
+			.fa-github {
+				background:black;
+				color: white;
+			}
+
+			.marginTop{
+				margin-top:40px;
+			}
+
+			.lineHeight{
+				line-height: 90%;
+			}
+
+			.headingText{
+				color:#69D7E6;
+			}
+
+			.navigationIcon{
+				color:#434355;
+				width:10%;
+				height:100%;
 			}
 
 		</style>
@@ -84,33 +143,47 @@
 			<!-- Sidebar -->
 			<nav id="sidebar">
 			
-				<a href=""><div class="navigationButton mb-3" style="color:#ABE5EF;"><i class="fas fa-wrench"></i> SETTINGS</div></a>
-				<a href=""><div class="navigationButton mb-3" style="color:#9AEB90;"><i class="fas fa-code"></i> GISTS</div></a>
-				<a href=""><div class="navigationButton mb-3" style="color:#E7C185;"><i class="fab fa-stack-overflow"></i> STACK OVERFLOW</div></a>
-				<a href=""><div class="navigationButton mb-3" style="color:#E288CC;"><i class="fas fa-chart-line"></i> TRENDING</div></a>
-				<a href=""><div class="navigationButton mb-3" style="color:#C6A3EE;"><i class="fas fa-pencil-alt"></i> SCRATCH PAD</div></a>
-				<a href=""><div class="navigationButton mb-3" style="color:#EDEDEA;"><i class="far fa-lightbulb"></i> PLAYGROUND<i class="fas fa-lock ml-1"></i></div></a>
-				<a href=""><div class="navigationButton" style="color:#DEDB8C;"><i class="fas fa-question""></i> HELP/INTRO</div></a>
+				<a href=""><div class="navigationButton mb-3 mr-3" style="color:#69D7E6;"><span class="navigationIcon" style="background-color:#69D7E6;"><i class="fa fa-wrench"></i></span>SETTINGS</div></a>
+				<a href=""><div class="navigationButton mb-3 mr-3" style="color:#04E674;"><span class="navigationIcon" style="background-color:#04E674;"><i class="fa fa-code"></i></span>GISTS</div></a>
+				<a href=""><div class="navigationButton mb-3 mr-3" style="color:#E5A25C;"><span class="navigationIcon" style="background-color:#E5A25C;"><i class="fa fa-stack-overflow"></i></span>STACK OVERFLOW</div></a>
+				<a href=""><div class="navigationButton mb-3 mr-3" style="color:#E452B3;"><span class="navigationIcon" style="background-color:#E452B3;"><i class="fa fa-line-chart"></i></span>TRENDING</div></a>
+				<a href=""><div class="navigationButton mb-3 mr-3" style="color:#B577E3;"><span class="navigationIcon" style="background-color:#B577E3;"><i class="fa fa-pencil"></i></span>SCRATCH PAD</div></a>
+				<a href=""><div class="navigationButton mb-3 mr-3" style="color:white;"><span class="navigationIcon" style="background-color:white;"><i class="fa fa-lightbulb-o"></i></span>PLAYGROUND<i class="fa fa-lock ml-1"></i></div></a>
+				<a href=""><div class="navigationButton mr-3" style="color:#D3CD67;"><span class="navigationIcon" style="background-color:#D3CD67;"><i class="fa fa-question"></i></span>HELP/INTRO</div></a>
 				<div id="navBottom">
-					<a href="">
-						<i class="fab fa-twitter-square mr-1" style="color:#74BAE6;"></i>
-					</a>
-					<a href="">
-						<i class="fab fa-github-square mr-1"></i>
-					</a>
-					<a href="">
-						<i class="fab fa-facebook-square mr-1" style="color:#5B70AA;"></i>
-					</a>
-					<a href="">
-						<i class="fab fa-linkedin" style="#5A95BC"></i>
-					</a>
+					<a href="https://twitter.com/awol_tech" target="_blank" class="fa fa-twitter"></a>
+					<a href="https://github.com/TalhaAWOL" target="_blank" class="fa fa-github"></a>
+					<a href="" class="fa fa-facebook"></a>
+					<a href="" class="fa fa-linkedin"></a>
 				</div>
 
 			</nav>
+
 			<!-- Page Content -->
 			<div id="content">
 
+				<div class="row">
 				
+					<div class="col-3 text-center marginTop">
+					
+						<p class="lineHeight headingText"><i class="fa fa-reddit-alien" aria-hidden="true"></i>POPULAR ON R/JAVASCRIPT</p>
+
+					</div>
+
+					<div class="col-6 text-center marginTop">
+					
+						<p class="lineHeight headingText"><i class="fa fa-clock-o" aria-hidden="true"></i>RELEVANT JAVASCRIPT HISTORY</p>
+
+					</div>
+
+					<div class="col-3 text-center marginTop">
+					
+						<p class="lineHeight headingText"><i class="fa fa-github-alt" aria-hidden="true"></i>GITHUB ISSUES HISTORY</p>
+						<p class="text-muted" style="margin-top:-15px;font-size:12px;">swith to gitlab</p>
+
+					</div>
+
+				</div>
 				
 			</div>
 		</div>
