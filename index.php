@@ -66,7 +66,7 @@
 			
 			.navigationButton{
 				width:100%;
-				height:20px;
+				height:15px;
 				font-size:13px;
 			}
 
@@ -79,9 +79,19 @@
 
 			#navBottom a:hover{
 				text-decoration:none;
+				color:white;
 			}
 
-			.fa {
+			.marginTop .fa {
+				padding:4px 0px;
+				font-size: 15px;
+				width: 22px;
+				text-align: center;
+				text-decoration: none;
+				border-radius: 50%;
+			}
+
+			#navBottom .fa {
 				padding:4px 0px;
 				font-size: 15px;
 				width: 22px;
@@ -126,11 +136,21 @@
 			.headingText{
 				color:#69D7E6;
 			}
-
+			
 			.navigationIcon{
+				border-top-left-radius:2px;
+				border-top-right-radius:2px;
+				border-bottom-left-radius:2px;
+				border-bottom-right-radius:2px;
+				padding:3px 0px;
+			}
+
+			.navigationIcon .fa{
 				color:#434355;
-				width:10%;
-				height:100%;
+    			height:100%;
+				font-size: 15px;
+				width: 21px;
+				text-align: center;
 			}
 
 		</style>
@@ -143,18 +163,19 @@
 			<!-- Sidebar -->
 			<nav id="sidebar">
 			
-				<a href=""><div class="navigationButton mb-3 mr-3" style="color:#69D7E6;"><span class="navigationIcon" style="background-color:#69D7E6;"><i class="fa fa-wrench"></i></span>SETTINGS</div></a>
-				<a href=""><div class="navigationButton mb-3 mr-3" style="color:#04E674;"><span class="navigationIcon" style="background-color:#04E674;"><i class="fa fa-code"></i></span>GISTS</div></a>
-				<a href=""><div class="navigationButton mb-3 mr-3" style="color:#E5A25C;"><span class="navigationIcon" style="background-color:#E5A25C;"><i class="fa fa-stack-overflow"></i></span>STACK OVERFLOW</div></a>
-				<a href=""><div class="navigationButton mb-3 mr-3" style="color:#E452B3;"><span class="navigationIcon" style="background-color:#E452B3;"><i class="fa fa-line-chart"></i></span>TRENDING</div></a>
-				<a href=""><div class="navigationButton mb-3 mr-3" style="color:#B577E3;"><span class="navigationIcon" style="background-color:#B577E3;"><i class="fa fa-pencil"></i></span>SCRATCH PAD</div></a>
-				<a href=""><div class="navigationButton mb-3 mr-3" style="color:white;"><span class="navigationIcon" style="background-color:white;"><i class="fa fa-lightbulb-o"></i></span>PLAYGROUND<i class="fa fa-lock ml-1"></i></div></a>
-				<a href=""><div class="navigationButton mr-3" style="color:#D3CD67;"><span class="navigationIcon" style="background-color:#D3CD67;"><i class="fa fa-question"></i></span>HELP/INTRO</div></a>
+				<a href=""><div class="navigationButton mb-4" style="color:#69D7E6;"><span class="navigationIcon mr-1" style="background-color:#69D7E6;"><i class="fa fa-wrench"></i></span>SETTINGS</div></a>
+				<a href=""><div class="navigationButton mb-4" style="color:#04E674;"><span class="navigationIcon mr-1" style="background-color:#04E674;"><i class="fa fa-code"></i></span>GISTS</div></a>
+				<a href=""><div class="navigationButton mb-4" style="color:#E5A25C;"><span class="navigationIcon mr-1" style="background-color:#E5A25C;"><i class="fa fa-stack-overflow"></i></span>STACK OVERFLOW</div></a>
+				<a href=""><div class="navigationButton mb-4" style="color:#E452B3;"><span class="navigationIcon mr-1" style="background-color:#E452B3;"><i class="fa fa-line-chart"></i></span>TRENDING</div></a>
+				<a href=""><div class="navigationButton mb-4" style="color:#B577E3;"><span class="navigationIcon mr-1" style="background-color:#B577E3;"><i class="fa fa-pencil"></i></span>SCRATCH PAD</div></a>
+				<a href=""><div class="navigationButton mb-4" style="color:white;"><span class="navigationIcon mr-1" style="background-color:white;"><i class="fa fa-lightbulb-o"></i></span>PLAYGROUND<i class="fa fa-lock ml-1"></i></div></a>
+				<a href=""><div class="navigationButton" style="color:#D3CD67;"><span class="navigationIcon mr-1" style="background-color:#D3CD67;"><i class="fa fa-question"></i></span>HELP/INTRO</div></a>
 				<div id="navBottom">
-					<a href="https://twitter.com/awol_tech" target="_blank" class="fa fa-twitter"></a>
-					<a href="https://github.com/TalhaAWOL" target="_blank" class="fa fa-github"></a>
-					<a href="" class="fa fa-facebook"></a>
-					<a href="" class="fa fa-linkedin"></a>
+					<a href="https://initab.com/" target="_blank"><img class="pb-2" src="initab_logo.jpg" width="110px"></a><br>
+					<a href="https://twitter.com/awol_tech" target="_blank"><i class="fa fa-twitter"></i></a>
+					<a href="https://github.com/TalhaAWOL" target="_blank"><i class="fa fa-github"></i></a>
+					<a href="" target="_blank"><i class="fa fa-facebook"></i></a>
+					<a href="" target="_blank"><i class="fa fa-linkedin"></i></a>
 				</div>
 
 			</nav>
