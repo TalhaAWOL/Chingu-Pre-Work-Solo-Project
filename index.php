@@ -23,8 +23,8 @@
 		
 		<!-- jQuery CDN - Slim version (=with AJAX) -->
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 		<!-- Popper.JS -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
@@ -37,8 +37,13 @@
 		
 			body{
 				font-family: 'Inconsolata', monospace;
-				background-color:#30303D;
+				background-color:#2B2B37;
 				letter-spacing: -0.5px;
+				overflow:hidden;
+			}
+
+			::-webkit-scrollbar{
+				width: 0px;
 			}
 
 			.wrapper {
@@ -153,6 +158,119 @@
 				text-align: center;
 			}
 
+			.posts{
+				font-size: 14px;
+				padding-left:14px;
+				border-left: 3px solid #6C757D;
+			}
+
+			.posts a:hover{
+				text-decoration:none;
+			}
+
+			#postLink{
+				color:#D84AA4;
+				text-decoration:underline;
+			}
+
+			#postLink:hover{
+				color:#69D7E6;
+				text-decoration:underline;
+			}
+
+			.scroll{
+				overflow-y: auto;
+   				height: 100vh;
+				overflow: -moz-scrollbars-none; 
+				-ms-overflow-style: none; 
+			}
+
+			#jsHistory{
+				height:46%;
+				width:100%;
+				border-bottom:1px solid #393948;
+				overflow-y: auto;
+				overflow: -moz-scrollbars-none; 
+				-ms-overflow-style: none; 
+			}
+
+			.jsHistoryIcon{
+				border: 1px solid #04E674;
+				border-top-left-radius:2px;
+				border-top-right-radius:2px;
+				border-bottom-left-radius:2px;
+				border-bottom-right-radius:2px;
+			}
+
+			.jsHistoryTimeText{
+				color:#7E7E83;
+				padding-left:220px;
+				text-align:right;
+			}
+
+			.jsHistroyText{
+				font-size:13.5px;
+				white-space: nowrap;
+			}
+
+			#timeDiv{
+				margin-top:30px;
+			}
+
+			#clockText{
+				font-size:100px;
+				color:#6271A3;
+			}
+
+			#amText{
+				font-size:35px;
+				margin-left:-50px;
+			}
+
+			#dateText{
+				margin-top:-45px;
+				font-size:25px;
+				color:#6271A3;
+			}
+
+			#alertDiv{
+				color:#6271A3;
+				font-size:12px;
+				display:initial;
+			}
+
+			#alertDiv a{
+				text-decoration:none;
+			}
+
+			#alertClose{
+				color:#FEB86B;
+				cursor: pointer;
+			}
+
+			.postsGit{
+				font-size: 14px;
+				padding-left:14px;
+				border-left: 3px solid #6C757D;
+			}
+
+			.postsGit a{
+				text-decoration:none;
+			}
+
+			#gitScroll{
+				overflow-y: auto;
+   				height: 70vh;
+				overflow: -moz-scrollbars-none; 
+				-ms-overflow-style: none; 
+				border-bottom:1px solid #393948;
+			}
+
+			#gitScroll a{
+				text-decoration:none;
+			}
+			
+
 		</style>
 		
 	</head>
@@ -174,8 +292,8 @@
 					<a href="https://initab.com/" target="_blank"><img class="pb-2" src="initab_logo.jpg" width="110px"></a><br>
 					<a href="https://twitter.com/awol_tech" target="_blank"><i class="fa fa-twitter"></i></a>
 					<a href="https://github.com/TalhaAWOL" target="_blank"><i class="fa fa-github"></i></a>
-					<a href="" target="_blank"><i class="fa fa-facebook"></i></a>
-					<a href="" target="_blank"><i class="fa fa-linkedin"></i></a>
+					<a href=""><i class="fa fa-facebook"></i></a>
+					<a href=""><i class="fa fa-linkedin"></i></a>
 				</div>
 
 			</nav>
@@ -185,30 +303,280 @@
 
 				<div class="row">
 				
-					<div class="col-3 text-center marginTop">
+					<div id="redditNews" class="col-3 scroll marginTop pb-3">
 					
-						<p class="lineHeight headingText"><i class="fa fa-reddit-alien" aria-hidden="true"></i>POPULAR ON R/JAVASCRIPT</p>
+						<p class="lineHeight text-center headingText"><i class="fa fa-reddit-alien" aria-hidden="true"></i>POPULAR ON R/JAVASCRIPT</p>
+						
+						<br>
+
+						
+					</div>
+
+					<div class="col-6 marginTop">
+					
+						<div id="jsHistory">
+
+							<p class="lineHeight text-center headingText"><i class="fa fa-clock-o" aria-hidden="true"></i>RELEVANT JAVASCRIPT HISTORY</p>
+							
+							<br>
+
+							<div class="row">
+							
+								<div class="col-xl-5">
+								
+									<img class="jsHistoryIcon mr-2" width="16px" src="w3school.jpg" alt=""><a href="" class="text-muted jsHistroyText">JavaScript this</a>
+
+								</div>
+
+								<div class="col-xl-7">
+								
+									<span class="jsHistroyText jsHistoryTimeText">16 hours ago</span>
+
+								</div>
+							
+							</div>
+						
+						</div>
+						
+						<div id="timeDiv" class="text-center">
+
+							<p id="clockText"></p><p id="dateText"></p>
+
+						</div>
+
+						<div id="alertDiv" class="text-center">
+						
+							<p>Did you know you can add CUSTOM LINKS to display in this section?<br>Open the SETTINGS panel and add the URLs of your favorites sites to the 'CUSTOM LINKS' textarea.<br><a id="alertClose">Got it! Don't show me this again.</a></p>
+
+						</div>
 
 					</div>
 
-					<div class="col-6 text-center marginTop">
+					<div class="col-3 marginTop pb-3" id="gitScroll">
 					
-						<p class="lineHeight headingText"><i class="fa fa-clock-o" aria-hidden="true"></i>RELEVANT JAVASCRIPT HISTORY</p>
+						<p class="lineHeight text-center headingText"><i class="fa fa-github-alt" aria-hidden="true"></i>GITHUB ISSUES HISTORY</p>
+						<p class="text-muted text-center" style="margin-top:-15px;font-size:12px;">swith to gitlab</p>
 
-					</div>
+						<div class="text-center">
+							<a href="" class="mr-3" style="color:#C0C56F">ISSUES</a><a href="" style="color:#D84AA4;">PULL REQUESTS</a>
+						</div>
 
-					<div class="col-3 text-center marginTop">
-					
-						<p class="lineHeight headingText"><i class="fa fa-github-alt" aria-hidden="true"></i>GITHUB ISSUES HISTORY</p>
-						<p class="text-muted" style="margin-top:-15px;font-size:12px;">swith to gitlab</p>
+						<br>
+
+						<div id="gitIssues">
+
+						</div>
 
 					</div>
 
 				</div>
 				
 			</div>
+			
 		</div>
 	
+		<script>
+
+			$("#alertClose").click(function() {	
+				$("#alertDiv").css("display", "none")
+			})
+
+			function formatDate(date) {
+				var monthNames = [
+					"January", "February", "March",
+					"April", "May", "June", "July",
+					"August", "September", "October",
+					"November", "December"
+				];
+
+				var day = date.getDate();
+				var monthIndex = date.getMonth();
+				var year = date.getFullYear();
+
+				return monthNames[monthIndex] + ' ' + day + ', ' + year;
+			}
+
+			function formatTime(date){
+
+				d = new Date(date);
+				var hours=d.getHours(),minute=d.getMinutes(),l="AM";
+				if(hours > 12){
+					hours = hours - 12;
+				}
+				if(hours < 10){
+				hours = '0'+hours;
+				}
+				if(minute < 10){
+					minute = '0'+minute;
+				}
+				if(d.getHours() >= 12){
+				l="PM"
+				}else{
+				l="AM"
+				}
+
+				return hours+':'+minute+' '+'<span id="amText">'+l+'</span>';
+
+			}
+
+
+			(function(){
+				// Acquire the date
+				var date = new Date();
+				// Acquire the time as a string
+				var time = date.toLocaleTimeString();
+				$("#clockText").html(formatTime(date));
+				$("#dateText").html(formatDate(date));
+				setTimeout(arguments.callee, 1000);
+			})();
+
+			var jsonReddit = [{
+				"title" : "WebGL Fluid Simulation",
+				"postedBy": "u/magenta_placenta",
+				"redditScore": "426"
+			},
+			{
+				"title" : "WebGL Fluid Simulation",
+				"postedBy": "u/magenta_placenta",
+				"redditScore": "426"
+			},
+			{
+				"title" : "WebGL Fluid Simulation",
+				"postedBy": "u/magenta_placenta",
+				"redditScore": "426"
+			},
+			{
+				"title" : "WebGL Fluid Simulation",
+				"postedBy": "u/magenta_placenta",
+				"redditScore": "426"
+			},
+			{
+				"title" : "WebGL Fluid Simulation",
+				"postedBy": "u/magenta_placenta",
+				"redditScore": "426"
+			},
+			{
+				"title" : "WebGL Fluid Simulation",
+				"postedBy": "u/magenta_placenta",
+				"redditScore": "426"
+			},
+			{
+				"title" : "WebGL Fluid Simulation",
+				"postedBy": "u/magenta_placenta",
+				"redditScore": "426"
+			},
+			{
+				"title" : "WebGL Fluid Simulation",
+				"postedBy": "u/magenta_placenta",
+				"redditScore": "426"
+			}];
+
+			for(var i = 0; i < jsonReddit.length; i++) {
+				$("#redditNews").html( $("#redditNews").html() + '<div class="posts"><a href=""><p class="text-white">'+jsonReddit[i].title+'<br><span style="color:#31ABBB">Posted by:</span><br><span style="color:#C0C56F">'+jsonReddit[i].postedBy+'</span><br><span class="text-muted">Reddit Score: '+jsonReddit[i].redditScore+'</span><br><span id="postLink">Link to Comments</span></p></a></div><br>')
+			}
+
+			var jsonHistory = [{
+				"title" : "JavaScript this",
+				"time": "16"
+			},
+			{
+				"title" : "JavaScript this",
+				"time": "16"
+			},
+			{
+				"title" : "JavaScript this",
+				"time": "16"
+			},
+			{
+				"title" : "JavaScript this",
+				"time": "16"
+			},
+			{
+				"title" : "JavaScript this",
+				"time": "16"
+			},
+			{
+				"title" : "JavaScript this",
+				"time": "16"
+			},
+			{
+				"title" : "JavaScript this",
+				"time": "16"
+			},
+			{
+				"title" : "JavaScript this",
+				"time": "16"
+			},
+			{
+				"title" : "JavaScript this",
+				"time": "16"
+			},
+			{
+				"title" : "JavaScript this",
+				"time": "16"
+			}];
+
+			for(var i = 0; i < jsonHistory.length; i++) {
+				$("#jsHistory").html( $("#jsHistory").html() + '<div class="row mt-3"><div class="col-5"><img class="jsHistoryIcon mr-1" width="16px" src="w3school.jpg" alt=""><a href="" class="text-muted jsHistroyText">'+jsonHistory[i].title+'</a></div><div class="col-7"><span class="jsHistroyText jsHistoryTimeText">'+jsonHistory[i].time+' hours ago</span></div></div>')
+			}
+
+			var jsonGit = [{
+				"Repo" : "example/name",
+				"Issue": "2139",
+				"Warning": "This is unkown DOM propertyfor. Did you mean htmlFor?"
+			},
+			{
+				"Repo" : "example/name",
+				"Issue": "2139",
+				"Warning": "This is unkown DOM propertyfor. Did you mean htmlFor?"
+			},
+			{
+				"Repo" : "example/name",
+				"Issue": "2139",
+				"Warning": "This is unkown DOM propertyfor. Did you mean htmlFor?"
+			},
+			{
+				"Repo" : "example/name",
+				"Issue": "2139",
+				"Warning": "This is unkown DOM propertyfor. Did you mean htmlFor?"
+			},
+			{
+				"Repo" : "example/name",
+				"Issue": "2139",
+				"Warning": "This is unkown DOM propertyfor. Did you mean htmlFor?"
+			},
+			{
+				"Repo" : "example/name",
+				"Issue": "2139",
+				"Warning": "This is unkown DOM propertyfor. Did you mean htmlFor?"
+			},
+			{
+				"Repo" : "example/name",
+				"Issue": "2139",
+				"Warning": "This is unkown DOM propertyfor. Did you mean htmlFor?"
+			},
+			{
+				"Repo" : "example/name",
+				"Issue": "2139",
+				"Warning": "This is unkown DOM propertyfor. Did you mean htmlFor?"
+			},
+			{
+				"Repo" : "example/name",
+				"Issue": "2139",
+				"Warning": "This is unkown DOM propertyfor. Did you mean htmlFor?"
+			},
+			{
+				"Repo" : "example/name",
+				"Issue": "2139",
+				"Warning": "This is unkown DOM propertyfor. Did you mean htmlFor?"
+			}];
+
+			for(var i = 0; i < jsonGit.length; i++) {
+				$("#gitIssues").html( $("#gitIssues").html() + '<div class="postsGit mt-3"><a href=""><p><span class="text-muted">Repo: '+jsonGit[i].Repo+'</span><br><span style="color:#C0C56F">Issue #'+jsonGit[i].Issue+'</span><br><span style="color:white">Warning: '+jsonGit[i].Warning+'</span></p></a></div>')
+			}
+
+		</script>
+
 	</body>
 </html>
 
