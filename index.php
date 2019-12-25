@@ -81,7 +81,7 @@
 							
 							<br>
 
-							<div class="row">
+							<div class="row"> 
 							
 								<div class="col-xl-5">
 								
