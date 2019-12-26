@@ -71,7 +71,7 @@
 						<br>
 
 						
-					</div>
+					</div> 
 
 					<div class="col-6 marginTop">
 					
