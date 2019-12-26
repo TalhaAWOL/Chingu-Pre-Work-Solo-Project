@@ -73,7 +73,7 @@
 						
 					</div> 
 
-					<div class="col-6 marginTop">
+					<div class="col-6 marginTop"> 
 					
 						<div id="jsHistory">
 
